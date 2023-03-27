@@ -2,7 +2,12 @@
     defines about page content. -->
 {% extends 'base.html' %}
 {% block content %}
+    <!-- Iterate over 'numbers' list and display each value. -->
+    {% for number in numbers %}
+        <p> {{ number }} </p>
+    {% endfor %} 
 <h2>{{ page_title }}</h2>
+
 <p>
     The formation of the group grew out of a meeting Gandalf had with Thorin in Bree which kindled Thorin's interest in
     recapturing his long lost family inheritance. (Thorin's grandfather had been the King under the Mountain when Smaug
@@ -36,7 +41,7 @@
         <h3>Fíli and Kíli</h3>
         <p>
             Fíli and Kíli were brothers, the youngest of the thirteen Dwarves who set out with Thorin Oakenshield's
-            company, along with Gandalf and Bilbo Baggins, to reclaim the Lonely Mountain from the dragon Smaug. 
+            company, along with Gandalf and Bilbo Baggins, to reclaim the Lonely Mountain from the dragon Smaug.
             <br>
             Fíli and Kíli were the two most active Dwarves of Thorin's company, and, apart from Balin and possibly
             Bombur, they appear more frequently as "individual" characters in J.R.R. Tolkien's The Hobbit than the rest

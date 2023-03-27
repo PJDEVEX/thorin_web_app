@@ -20,14 +20,14 @@ def index():
 #  route for the about page
 @app.route("/about")
 def about():
-    # Renders "about.html" template with "About" title.
-    return render_template("about.html", page_title="About")
+    # enders about.html with page_title & numbers variables set.
+    return render_template("about.html", page_title="About", numbers=[1, 2, 3])
 
 
 #  route for the contact page
 @app.route("/contact")
 def contact():
-    # Renders "about.html" template with "About" title.
+    # Renders "contact.html" template with "Contact" title.
     return render_template("contact.html", page_title="Contact Us")
 
 
