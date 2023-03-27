@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
-    <!-- Link to static CSS file using Flask framework's url_for function -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}">
-    <title>Hello Flask</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css">
+  <!-- Link to static CSS file using Flask framework's url_for function -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}" type="text/css">
+  <!-- Link to static customed CSS file -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  <title>Hello Flask</title>
 </head>
+
 <body>
 
 
@@ -17,7 +21,9 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
       </button>
@@ -42,12 +48,13 @@
 
   <!-- Page Header -->
   <!-- Header with background image using URL -->
-  <header class="masthead" style="background-image: url('https://th.bing.com/th/id/R.a391dffab72a14425bdab4750733e12b?rik=L38Zr%2bZz%2by2uxQ&riu=http%3a%2f%2fth05.deviantart.net%2ffs70%2fPRE%2ff%2f2013%2f275%2f8%2ff%2fthe_hobbit__thorin_and_company_by_art_calavera-d5nay7b.png&ehk=pnP5q6E%2bt45pxkQQLxfUrLPWZk5BG6UwVhjBhIa%2b99g%3d&risl=&pid=ImgRaw&r=0)">
+  <header class="masthead"
+    style="background-image: url('https://th.bing.com/th/id/R.a391dffab72a14425bdab4750733e12b?rik=L38Zr%2bZz%2by2uxQ&riu=http%3a%2f%2fth05.deviantart.net%2ffs70%2fPRE%2ff%2f2013%2f275%2f8%2ff%2fthe_hobbit__thorin_and_company_by_art_calavera-d5nay7b.png&ehk=pnP5q6E%2bt45pxkQQLxfUrLPWZk5BG6UwVhjBhIa%2b99g%3d&risl=&pid=ImgRaw&r=0)">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <!-- Header for website about dwarves -->
+          <!-- Header for website about dwarves -->
           <div class="site-heading">
             <h1>Thorin &amp Company</h1>
             <span class="subheading">Thorin and his company of dwarves</span>
@@ -59,67 +66,10 @@
 
   <!-- Main Content -->
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              Man must explore, and this is exploration at its greatest
-            </h2>
-            <h3 class="post-subtitle">
-              Problems look mighty small from 150 miles up
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 24, 2019</p>
-        </div>
-        <hr>
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-            </h2>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 18, 2019</p>
-        </div>
-        <hr>
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              Science has not yet mastered prophecy
-            </h2>
-            <h3 class="post-subtitle">
-              We predict too much for the next year and yet far too little for the next ten.
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on August 24, 2019</p>
-        </div>
-        <hr>
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              Failure is not an option
-            </h2>
-            <h3 class="post-subtitle">
-              Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on July 8, 2019</p>
-        </div>
-        <hr>
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-        </div>
-      </div>
-    </div>
+    <!-- Defines a block named "content" for template inheritance. -->
+    {% block content%}
+    {% endblock %}
+
   </div>
 
   <hr>
@@ -163,16 +113,17 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-	<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-	
-	<!-- Custom scripts for this template -->
-	<script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-    <script>
-        // Update copyright year dynamically using JavaScript.
-        $("#copyright").text(new Date().getFullYear());
-    </script>
+  <!-- Custom scripts for this template -->
+  <script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+
+  <script>
+    // Update copyright year dynamically using JavaScript.
+    $("#copyright").text(new Date().getFullYear());
+  </script>
 
 </body>
+
 </html>
