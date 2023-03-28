@@ -1,9 +1,8 @@
 <!-- Template for displaying company information and page title -->
 {% extends 'base.html' %}
 {% block content %}
-    <!-- Outputs the name of the second company and the company list -->
-    {{ company[1]["name"] }}
-    {{ company }}
+<!-- Outputs the name of the second company and the company list -->
+{{ company[1]["name"] }}
 <h2>{{ page_title }}</h2>
 
 <p>
@@ -15,40 +14,47 @@
     superstitious Dwarves also considered thirteen to be an unlucky number, and as Gandalf had planned to leave on other
     business, welcomed a fourteenth to fill into their party
 </p>
+
+<!-- Jinja loop iterating over 'company' members -->
+{% for member in company %}
 <div class="row featurette">
+
+    <!-- Only execute if loop index is odd. -->
+    {% if loop.index %2 != 0 %}
+
     <div class="col-md-7">
-        <h3>Thorin II Oakenshield</h3>
-        <p>
-            Thorin II "Oakenshield", eventually called King under the Mountain or Mountain King[1], was the son of
-            Thráin
-            II, the older brother of Frerin and Dís, the grandson of King Thrór and the uncle of Fíli and Kíli. Thorin
-            was best known for his deeds as leader of a company that infiltrated the lost Kingdom under the Mountain to
-            take it back from Smaug and for leading an alliance of Men, Dwarves, and Elves in the Battle of Five Armies.
-        </p>
+        <!-- Renders member's name and description in HTML format -->
+        <h3>{{ loop.index }}. {{ member.name }}</h3>
+        <p> {{ member.description }} </p>
     </div>
     <div class="col-md-5">
-        <img src="https://static.wikia.nocookie.net/lotr/images/7/76/ThorinTDOMTextlessPoster.jpg" alt="">
+        <img src="{{ member.image_source }}" class="featurette-image image-responsive" alt="">
     </div>
-</div>
 
-<div class="row featurette">
+    {% else %}
     <div class="col-md-5">
-        <img src="https://static.wikia.nocookie.net/lotr/images/b/b4/The-Hobbit-Fili-and-Kili.jpg" alt="">
+        <img src="{{ member.image_source }}" class="featurette-image image-responsive" alt="">
     </div>
     <div class="col-md-7">
-        <h3>Fíli and Kíli</h3>
-        <p>
-            Fíli and Kíli were brothers, the youngest of the thirteen Dwarves who set out with Thorin Oakenshield's
-            company, along with Gandalf and Bilbo Baggins, to reclaim the Lonely Mountain from the dragon Smaug.
-            <br>
-            Fíli and Kíli were the two most active Dwarves of Thorin's company, and, apart from Balin and possibly
-            Bombur, they appear more frequently as "individual" characters in J.R.R. Tolkien's The Hobbit than the rest
-            of Thorin's companions, who are most often named only in group-reference.
-        </p>
+        <!-- Renders member's name and description in HTML format -->
+        <h3>{{ loop.index }}. {{ member.name }}</h3>
+        <p> {{ member.description }} </p>
     </div>
+
+    {% endif %}
+
 </div>
 
+<!-- Inserts a horizontal divider after each item in a 
+    loop except for the last one. -->
+{% if loop.index != loop.length %}
+    <hr class="featurette-divider">
+{% endif %}
+
+<!-- End of for-loop statement -->
+{% endfor%}
 
 
 
+<!-- End of a block in a template -->
 {% endblock %}
