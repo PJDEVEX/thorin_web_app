@@ -1,8 +1,9 @@
-<!-- Extends base.html layout and 
-    defines about page content. -->
+<!-- Template for displaying company information and page title -->
 {% extends 'base.html' %}
 {% block content %}
-    {{ company }} 
+    <!-- Outputs the name of the second company and the company list -->
+    {{ company[1]["name"] }}
+    {{ company }}
 <h2>{{ page_title }}</h2>
 
 <p>
