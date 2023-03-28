@@ -1,8 +1,9 @@
-# Importing the Flask class 
+# Importing the Flask class
 # render_template function from the Flask module
 from flask import Flask, render_template
-
-# Importing the 'os' module for operating system 
+# Importing json
+import json
+# Importing the 'os' module for operating system
 # related functionalities
 import os
 
@@ -20,8 +21,11 @@ def index():
 #  route for the about page
 @app.route("/about")
 def about():
+    data = []
+    with open("data/company.json", "r") as json_data:
+        data = json.load(json_data)
     # enders about.html with page_title & numbers variables set.
-    return render_template("about.html", page_title="About", numbers=[1, 2, 3])
+    return render_template("about.html", page_title="About", company=data)
 
 
 #  route for the contact page
