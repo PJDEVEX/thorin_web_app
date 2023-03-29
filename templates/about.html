@@ -24,7 +24,8 @@
 
     <div class="col-md-7">
         <!-- Renders member's name and description in HTML format -->
-        <h3>{{ loop.index }}. {{ member.name }}</h3>
+        <h3><a href="about/{{member.url}}">{{ loop.index }}. {{ member.name }}</a></h3>
+        <!-- <h3><a href="about/{{member.name | replace(' ', '-') | replace('&, ','and') | replace('Ó', 'O') | lower }}">{{ loop.index }}.{{ member.name }}</a></h3> -->
         <p> {{ member.description }} </p>
     </div>
     <div class="col-md-5">
@@ -36,8 +37,8 @@
         <img src="{{ member.image_source }}" class="featurette-image image-responsive" alt="">
     </div>
     <div class="col-md-7">
-        <!-- Renders member's name and description in HTML format -->
-        <h3>{{ loop.index }}. {{ member.name }}</h3>
+        <!-- Renders member's name and description in HTML with link and index -->
+        <h3><a href="about/{{member.url}}">{{ loop.index }}. {{ member.name }}</a></h3>
         <p> {{ member.description }} </p>
     </div>
 
@@ -48,7 +49,7 @@
 <!-- Inserts a horizontal divider after each item in a 
     loop except for the last one. -->
 {% if loop.index != loop.length %}
-    <hr class="featurette-divider">
+<hr class="featurette-divider">
 {% endif %}
 
 <!-- End of for-loop statement -->
